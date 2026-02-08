@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Help Desk</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .ticket-table {
+            width: 100%;
+            background: white;
+            border-collapse: collapse;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .ticket-table th,
+        .ticket-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        .ticket-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .action-btn {
+            padding: 5px 10px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header"
+        style="justify-content: space-between; display: flex; align-items: center; padding: 15px 30px;">
+        <div style="flex: 1;">
+            <h1>IT Service Desk - Admin Console</h1>
+            <p>Logged in as: System Administrator</p>
+        </div>
+        <button onclick="logout()" class="btn btn-secondary"
+            style="font-size: 0.8rem; padding: 8px 16px;">Logout</button>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-number">0</div>
+                <div>Open Tickets</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">0</div>
+                <div>In Progress</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">0</div>
+                <div>Resolved This Month</div>
+            </div>
+        </div>
+
+        <h2>Incoming Tickets</h2>
+        <table class="ticket-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>User</th>
+                    <th>Category</th>
+                    <th>Priority</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="ticketTableBody">
+                <!-- Populated by JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Ticket Details Modal -->
+    <div id="ticketModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Ticket Details <span id="modalTicketId"
+                        style="font-size: 0.8em; color: #666;"></span></h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body-row" style="display: flex; gap: 20px;">
+                    <div style="flex: 1;">
+                        <span class="modal-label">User</span>
+                        <div class="modal-value" id="modalUser"></div>
+                    </div>
+                    <div style="flex: 1;">
+                        <span class="modal-label">Date</span>
+                        <div class="modal-value" id="modalDate"></div>
+                    </div>
+                </div>
+                <div class="modal-body-row" style="display: flex; gap: 20px;">
+                    <div style="flex: 1;">
+                        <span class="modal-label">Category</span>
+                        <div class="modal-value" id="modalCategory"></div>
+                    </div>
+                    <div style="flex: 1;">
+                        <span class="modal-label">Priority</span>
+                        <div class="modal-value" id="modalPriority"></div>
+                    </div>
+                </div>
+                <div class="modal-body-row">
+                    <span class="modal-label">Status</span>
+                    <div class="modal-value" id="modalStatus"></div>
+                </div>
+                <div class="modal-body-row">
+                    <span class="modal-label">Description</span>
+                    <div class="modal-value modal-description" id="modalDescription"></div>
+                </div>
+            </div>
+            <div style="text-align: right; margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee;">
+                <button class="btn btn-secondary" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

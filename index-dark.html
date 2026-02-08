@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Help Desk - Dark Mode</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style-dark.css">
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-headset"></i>
+                HelpDesk<span>Pro</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">My Tickets</a>
+                <a href="#" class="nav-link">Knowledge Base</a>
+                <button class="btn-primary">
+                    <i class="fa-solid fa-plus"></i> New Ticket
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Command Center Support</h1>
+            <p>System operational. Search for protocols or raise an incident ticket.</p>
+
+            <div class="search-box">
+                <i class="fa-solid fa-terminal search-icon"></i>
+                <input type="text" class="search-input"
+                    placeholder="Execute search query (e.g. error 404, VPN access...)">
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions Grid -->
+    <section class="quick-actions">
+        <h2 class="section-title">System Actions</h2>
+
+        <div class="cards-grid">
+            <!-- Card 1 -->
+            <div class="action-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <h3 class="card-title">Report Incident</h3>
+                <p class="card-desc">Hardware failure or software bug? Log an incident report immediately.</p>
+                <a href="#" class="card-link">Initialize Report <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="action-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
+                <h3 class="card-title">Request Access</h3>
+                <p class="card-desc">Need network permissions or new hardware allocation?</p>
+                <a href="#" class="card-link">Submit Request <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="action-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+                <h3 class="card-title">Ticket Status</h3>
+                <p class="card-desc">Monitor the real-time status of your active tickets.</p>
+                <a href="#" class="card-link">View Dashboard <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="action-card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-book-journal-whills"></i>
+                </div>
+                <h3 class="card-title">Documentation</h3>
+                <p class="card-desc">Access the central knowledge repository for self-diagnosis.</p>
+                <a href="#" class="card-link">Access DB <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Action Button -->
+    <div class="fab" title="Quick Support">
+        <i class="fa-solid fa-robot"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 IT Command Center. System Online.</p>
+            <div class="footer-links">
+                <a href="#">Security Protocols</a> |
+                <a href="#">Contact Admin</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS (Reused) -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

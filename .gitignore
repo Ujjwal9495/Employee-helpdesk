@@ -1,0 +1,19 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Build artifacts
+*.class
+target/
+build/
+bin/
+
+# Temporary files
+*.log
+*.tmp
+
+# Python (if using http.server creates pycache)
+__pycache__/

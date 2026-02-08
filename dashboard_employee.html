@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard - Help Desk</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .ticket-form {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .ticket-list {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .ticket-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .ticket-table th,
+        .ticket-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .ticket-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .status-open {
+            color: green;
+            font-weight: bold;
+        }
+
+        .status-closed {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header"
+        style="justify-content: space-between; display: flex; align-items: center; padding: 15px 30px;">
+        <div style="flex: 1;">
+            <h1>Employee Help Desk</h1>
+            <p>Welcome, John Doe (Employee)</p>
+        </div>
+        <button onclick="logout()" class="btn btn-secondary"
+            style="font-size: 0.8rem; padding: 8px 16px;">Logout</button>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- New Ticket Form -->
+        <section class="ticket-form">
+            <h2>Raise a New Ticket</h2>
+            <form id="newTicketForm" onsubmit="handleTicketSubmit(event)">
+                <div class="form-group">
+                    <label>Category</label>
+                    <select class="form-control" id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="Hardware">Hardware</option>
+                        <option value="Software">Software</option>
+                        <option value="Network">Network</option>
+                        <option value="Email">Email/Account</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Priority</label>
+                    <select class="form-control" id="priority" required>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea class="form-control" id="description" rows="4" required
+                        placeholder="Describe your issue..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Ticket</button>
+            </form>
+        </section>
+
+        <!-- Ticket History -->
+        <section class="ticket-list">
+            <h2>My Ticket History</h2>
+            <table class="ticket-table">
+                <thead>
+                    <tr>
+                        <th>Ticket ID</th>
+                        <th>Category</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="ticketTableBody">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!-- JS -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
